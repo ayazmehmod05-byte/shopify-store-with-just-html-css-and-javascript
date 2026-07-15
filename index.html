@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Sphire | Premium Tech Gadgets, Smartwatches & Lifestyle</title>
+    <!-- Tailwind CSS Integration through Vite -->
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="main.js"></script>
+    <!-- Lucide Icons CDN for Vanilla JS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Favicon -->
+    
+    
+
+
+
+  </head>
+  <body class="min-h-screen bg-white flex flex-col font-sans text-[#1a1a1a] selection:bg-[#1a1a1a] selection:text-white overflow-x-hidden">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[#1a1a1a]/5 transition-all">
+      <!-- Top Announcement Bar (Widget 4) -->
+      <div class="w-full overflow-hidden bg-[#2594c5] py-2 relative">
+        <div class="animate-marquee whitespace-nowrap inline-block">
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+          <span class="text-white text-xs sm:text-sm font-bold tracking-wider uppercase mr-10">🚚 FREE DELIVERY ALL OVER PAKISTAN</span>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 sm:h-20">
+          
+          <!-- Mobile Menu & Search triggers -->
+          <div class="flex items-center md:hidden gap-1">
+            <button id="mobile-menu-btn" class="p-2 text-[#1a1a1a] hover:opacity-60 transition-opacity">
+              <i data-lucide="menu" class="w-[22px] h-[22px]"></i>
+            </button>
+            <button id="mobile-search-btn" class="p-2 text-[#1a1a1a] hover:opacity-60 transition-opacity">
+              <i data-lucide="search" class="w-[18px] h-[18px]"></i>
+            </button>
+          </div>
+
+          <!-- Brand Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="/" class="flex items-center gap-2">
+              <div class="relative h-9 w-9 sm:h-11 sm:w-11 rounded-full overflow-hidden border border-[#1a1a1a]/15 bg-white flex items-center justify-center shrink-0 shadow-xs">
+                <img 
+                  src="WhatsApp Image 2026-07-13 at 4.03.28 PM.jpeg" 
+                  alt="Royal Sphire Logo" 
+                  referrerpolicy="no-referrer"
+                  class="h-full w-full object-cover scale-[1.02]"
+                />
+              </div>
+              <span class="text-xl sm:text-2xl font-serif italic tracking-tight text-[#1a1a1a] font-bold">
+                Royal <span class="not-italic font-light tracking-widest text-[10px] sm:text-xs uppercase opacity-80 ml-1">Sphire</span>
+              </span>
+            </a>
+          </div>
+
+          <!-- Search Bar - Desktop -->
+          <div class="hidden md:flex flex-1 max-w-lg mx-8">
+            <div class="relative w-full">
+              <input
+                id="desktop-search-input"
+                type="text"
+                placeholder="Search smart watches, earbuds, shavers..."
+                class="w-full bg-[#f5f5f0]/80 text-xs text-[#1a1a1a] pl-9 pr-4 py-2.5 border border-[#1a1a1a]/10 focus:outline-none focus:border-[#1a1a1a] transition-all tracking-wide"
+              />
+              <div class="absolute left-3 top-3 text-[#1a1a1a]/40">
+                <i data-lucide="search" class="w-[15px] h-[15px]"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Navigation Icons -->
+          <div class="flex items-center gap-1 sm:gap-4">
+            <a
+              id="whatsapp-call-link"
+              href="https://wa.me/923495979062?text=Hi%20Royal%20Sphire%2C%20I%20want%20to%20inquire%20about%20a%20product."
+              target="_blank"
+              referrerpolicy="no-referrer"
+              class="hidden lg:flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-[#1a1a1a] bg-transparent hover:opacity-75 px-3 py-2 transition-all border border-[#1a1a1a]/15"
+            >
+              <i data-lucide="phone-call" class="w-[13px] h-[13px] text-green-600"></i>
+              <span>+92 349 5979062</span>
+            </a>
+
+            <!-- Wishlist Button -->
+            <button
+              id="wishlist-trigger"
+              class="relative p-2.5 text-[#1a1a1a] hover:opacity-65 transition-all cursor-pointer"
+              title="View Wishlist"
+            >
+              <i data-lucide="heart" class="w-[19px] h-[19px] sm:w-[21px] sm:h-[21px]"></i>
+              <span id="wishlist-badge" class="absolute -top-0.5 -right-0.5 bg-[#b89253] text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center scale-90 border border-white hidden">0</span>
+            </button>
+
+            <!-- Cart Trigger -->
+            <button
+              id="cart-trigger"
+              class="relative p-2.5 text-[#1a1a1a] hover:opacity-65 transition-all cursor-pointer"
+              title="Open Shopping Cart"
+            >
+              <i data-lucide="shopping-cart" class="w-[19px] h-[19px] sm:w-[21px] sm:h-[21px]"></i>
+              <span id="cart-badge" class="absolute -top-0.5 -right-0.5 bg-black text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center scale-90 border border-white hidden">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Search Area (Expanded on Mobile toggle) -->
+        <div id="mobile-search-bar" class="hidden pb-4 md:hidden">
+          <div class="relative w-full">
+            <input
+              id="mobile-search-input"
+              type="text"
+              placeholder="Search products..."
+              class="w-full bg-[#f5f5f0] text-xs text-[#1a1a1a] pl-9 pr-4 py-3 border border-[#1a1a1a]/10 focus:outline-none focus:border-[#1a1a1a] transition-all tracking-wide"
+            />
+            <div class="absolute left-3 top-3.5 text-[#1a1a1a]/40">
+              <i data-lucide="search" class="w-[14px] h-[14px]"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Horizontal Slider -->
+        <div class="border-t border-[#1a1a1a]/5 py-3 sm:py-4 overflow-x-auto scrollbar-none">
+          <div id="categories-container" class="flex gap-2 sm:gap-4.5 min-w-max pb-1">
+            <!-- Dynamic Category Buttons populated in JS -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer Overlay & Panel -->
+    <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div class="absolute inset-y-0 left-0 max-w-xs w-full bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300 ease-out">
+        <div class="p-5 border-b border-[#1a1a1a]/10 flex justify-between items-center">
+          <span class="font-serif italic font-bold text-[#1a1a1a]">Royal Sphire Menu</span>
+          <button id="mobile-menu-close" class="p-1 text-[#1a1a1a] hover:opacity-50"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div class="p-6 flex flex-col gap-5 text-sm font-semibold tracking-wider uppercase text-gray-800 flex-1">
+          <a href="#catalog-section" class="mobile-menu-link hover:text-black">Shop Catalog</a>
+          <a href="#customer-reviews" class="mobile-menu-link hover:text-black">Verified Reviews</a>
+          <a href="#contact-section" class="mobile-menu-link hover:text-black">Contact & Queries</a>
+          <hr class="border-[#1a1a1a]/5 my-2">
+          <div class="flex flex-col gap-3.5 text-xs text-gray-500 font-normal lowercase tracking-normal">
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-[#b89253]"></i>
+              <span class="font-bold text-gray-800">+92 349 5979062</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-[#b89253]"></i>
+              <span>royalsphire@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section (Banner Display) -->
+    <section id="hero-section" class="w-full relative overflow-hidden select-none m-0 p-0 border-0 bg-white">
+      <div class="w-full mx-auto p-0 m-0">
+        <img 
+          src="website hero image.jpg.jpeg" 
+          alt="The Ultimate Connected Habitat - Royal Sphire Premium Tech" 
+          referrerPolicy="no-referrer"
+          class="w-full h-auto object-cover object-center block p-0 m-0"
+        />
+      </div>
+    </section>
+
+    <!-- Sale is Live Scrolling Marquee -->
+    <div class="w-full overflow-hidden bg-black py-3.5 border-t border-b border-white/5 relative shadow-inner">
+      <div class="animate-marquee whitespace-nowrap inline-block">
+        <span class="text-white text-xs sm:text-[13px] font-black tracking-[0.15em] uppercase mr-12 inline-flex items-center gap-3.5 select-none font-sans">
+          <span class="text-[#ff3838]">⚡ SALE IS LIVE!</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-black text-[10px] font-black leading-none">%</span>
+          <span class="text-white/90">UP TO 50% SPECIAL COD DISCOUNT</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-black text-[10px] font-black leading-none">%</span>
+          <span class="text-amber-400">FREE SHIPPING ALL OVER PAKISTAN</span>
+          <span class="text-white/40">★</span>
+        </span>
+        <span class="text-white text-xs sm:text-[13px] font-black tracking-[0.15em] uppercase mr-12 inline-flex items-center gap-3.5 select-none font-sans" aria-hidden="true">
+          <span class="text-[#ff3838]">⚡ SALE IS LIVE!</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-black text-[10px] font-black leading-none">%</span>
+          <span class="text-white/90">UP TO 50% SPECIAL COD DISCOUNT</span>
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white text-black text-[10px] font-black leading-none">%</span>
+          <span class="text-amber-400">FREE SHIPPING ALL OVER PAKISTAN</span>
+          <span class="text-white/40">★</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Main Catalog Area -->
+    <main id="catalog-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-1 w-full">
+      
+      <!-- Catalog Header and Status Info -->
+      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-10 pb-5 border-b border-gray-200 gap-4">
+        <div>
+          <span id="catalog-badge-text" class="text-[#1a1a1a]/50 font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.25em] block mb-1.5">
+            Editorial Selection
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-serif font-light text-[#1a1a1a] tracking-tight">
+            Explore <span class="italic font-normal">Smart Gadgets</span>
+          </h2>
+        </div>
+
+        <div id="catalog-count-display" class="text-[11px] uppercase tracking-wider text-gray-400 font-mono">
+          Showing 11 items
+        </div>
+      </div>
+
+      <!-- Free Delivery Countdown Timer & Urgency Widgets -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+        
+        <!-- Countdown Timer Widget (Widget 1) -->
+        <div id="countdown-box" class="w-full bg-white border border-red-500 rounded-xl p-5 shadow-xs flex flex-col justify-center text-center">
+          <h3 class="text-sm sm:text-base font-bold text-[#1a1a1a] flex items-center justify-center gap-1.5 m-0">
+            🚚 Free Home Delivery
+          </h3>
+          <p class="text-[11px] text-gray-500 my-1 font-medium">Offer ends in:</p>
+          <div id="countdown-timer" class="text-xl sm:text-2xl font-bold font-mono text-red-600 tracking-wider">
+            00 : 02 : 00 : 00
+          </div>
+          <div class="text-[9px] mt-1.5 text-gray-400 flex justify-center gap-6 font-semibold uppercase tracking-widest">
+            <span>Days</span>
+            <span>Hrs</span>
+            <span>Mins</span>
+            <span>Secs</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Order Tracker (Widget 2) -->
+        <div class="w-full bg-white border border-gray-150 rounded-xl p-5 shadow-xs flex flex-col justify-center">
+          <div class="flex justify-between items-center font-sans px-2 relative">
+            <div class="flex-1 text-center relative z-10">
+              <div class="w-9 h-9 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center text-sm mx-auto shadow">
+                🛒
+              </div>
+              <div class="text-[9px] font-bold mt-1.5 uppercase tracking-wider text-gray-900">Ordered</div>
+              <div id="tracker-date-0" class="text-[10px] text-gray-500 underline decoration-dotted mt-0.5">Today</div>
+            </div>
+
+            <div class="flex-1 text-center relative z-10">
+              <div class="absolute top-4.5 left-[-50%] right-[-50%] h-[2.5px] bg-[#38b6ff] -z-10"></div>
+              <div class="w-9 h-9 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center text-sm mx-auto shadow">
+                🚚
+              </div>
+              <div class="text-[9px] font-bold mt-1.5 uppercase tracking-wider text-gray-900">Dispatched</div>
+              <div id="tracker-date-1" class="text-[10px] text-gray-500 underline decoration-dotted mt-0.5">Tomorrow</div>
+            </div>
+
+            <div class="flex-1 text-center relative z-10">
+              <div class="w-9 h-9 bg-[#1a1a1a] text-white rounded-full flex items-center justify-center text-sm mx-auto shadow">
+                📍
+              </div>
+              <div class="text-[9px] font-bold mt-1.5 uppercase tracking-wider text-gray-900">Delivered</div>
+              <div id="tracker-date-2" class="text-[10px] text-gray-500 underline decoration-dotted mt-0.5">3-5 Days</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Happy Customers Bar & Live Viewers (Widget 7 & 3) -->
+        <div class="w-full bg-white border border-gray-150 rounded-xl p-5 shadow-xs flex flex-col justify-center items-center text-center gap-3">
+          <div class="flex items-center justify-center gap-3 text-xs font-semibold text-[#1a1a1a] font-sans">
+            <div class="flex items-center -space-x-2">
+              <img src="https://i.pravatar.cc/100?img=1" alt="Customer 1" class="w-6.5 h-6.5 rounded-full border-2 border-white object-cover shadow-sm" referrerpolicy="no-referrer" />
+              <img src="https://i.pravatar.cc/100?img=2" alt="Customer 2" class="w-6.5 h-6.5 rounded-full border-2 border-white object-cover shadow-sm" referrerpolicy="no-referrer" />
+              <img src="https://i.pravatar.cc/100?img=3" alt="Customer 3" class="w-6.5 h-6.5 rounded-full border-2 border-white object-cover shadow-sm" referrerpolicy="no-referrer" />
+            </div>
+            <span class="tracking-wide">10,000+ Happy Customers in Pakistan</span>
+          </div>
+          <div class="w-full h-[1px] bg-gray-100"></div>
+          <div class="flex items-center gap-2 justify-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Watching Eye" class="w-4.5 h-4.5 animate-pulse" referrerpolicy="no-referrer" />
+            <span id="global-watching-text" class="text-xs font-semibold text-[#1a1a1a]/80">
+              12 people are browsing the catalog now
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Catalog grid container -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+        <!-- Dynamic Product Cards injected here by JS -->
+      </div>
+
+      <!-- No Products Alert -->
+      <div id="no-products-alert" class="hidden text-center py-20 space-y-5 max-w-md mx-auto">
+        <div class="w-12 h-12 border border-[#1a1a1a]/10 flex items-center justify-center text-[#1a1a1a] mx-auto bg-[#f5f5f0]/50">
+          <i data-lucide="info" class="w-5 h-5 text-gray-500"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-serif font-medium text-[#1a1a1a]">No products found</h3>
+          <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">We couldn't find anything matching your filters. Try clearing your search term or choosing another category.</p>
+        </div>
+        <button
+          id="clear-catalog-filters-btn"
+          class="bg-[#1a1a1a] hover:bg-black text-white font-bold text-xs tracking-widest uppercase px-6 py-3.5 transition-all active:scale-98 cursor-pointer"
+        >
+          Clear Search & Filters
+        </button>
+      </div>
+
+    </main>
+
+    <!-- Logistics Delivery Partners Gallery (Widget 6) -->
+    <div class="py-8 bg-[#fdfdfb] border-t border-gray-100">
+      <p class="text-center text-[10px] font-bold uppercase tracking-widest text-[#1a1a1a]/40 mb-4">Our Trusted Logistics Partners</p>
+      <div class="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-6 sm:gap-12 px-4">
+        <div class="flex flex-col items-center justify-center border border-black/10 bg-white p-3.5 min-w-[150px] shadow-xs hover:border-[#1a1a1a]/30 transition-colors">
+          <span class="font-serif italic font-bold text-sm text-[#1a1a1a]">TCS Express</span>
+          <span class="text-[9px] text-gray-400 font-mono mt-0.5 uppercase tracking-wide">Premium logistics partner</span>
+        </div>
+        <div class="flex flex-col items-center justify-center border border-black/10 bg-white p-3.5 min-w-[150px] shadow-xs hover:border-[#1a1a1a]/30 transition-colors">
+          <span class="font-serif italic font-bold text-sm text-[#1a1a1a]">Leopard Courier</span>
+          <span class="text-[9px] text-gray-400 font-mono mt-0.5 uppercase tracking-wide">Secure cash collection</span>
+        </div>
+        <div class="flex flex-col items-center justify-center border border-black/10 bg-white p-3.5 min-w-[150px] shadow-xs hover:border-[#1a1a1a]/30 transition-colors">
+          <span class="font-serif italic font-bold text-sm text-[#1a1a1a]">PostEx Pakistan</span>
+          <span class="text-[9px] text-gray-400 font-mono mt-0.5 uppercase tracking-wide">Zero-delay dynamic routing</span>
+        </div>
+        <div class="flex flex-col items-center justify-center border border-black/10 bg-white p-3.5 min-w-[150px] shadow-xs hover:border-[#1a1a1a]/30 transition-colors">
+          <span class="font-serif italic font-bold text-sm text-[#1a1a1a]">M&P Logistics</span>
+          <span class="text-[9px] text-gray-400 font-mono mt-0.5 uppercase tracking-wide">Next-day priority delivery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Verified Customer Reviews Marquee Section (Widget 14) -->
+    <section id="customer-reviews" class="w-full bg-white py-12 border-t border-b border-[#eef2f7]" aria-label="Customer reviews">
+      <div class="max-w-7xl mx-auto px-4 mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 font-sans tracking-tight">Trusted by customers across Pakistan</h3>
+          <p class="text-xs text-gray-500 mt-1">Fast dispatch • Secure checkout • Easy returns</p>
+        </div>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-[10px] sm:text-xs bg-gray-50 border border-gray-150 rounded-full px-3 py-1 font-semibold text-gray-600">Verified Reviews</span>
+          <span class="text-[10px] sm:text-xs bg-gray-50 border border-gray-150 rounded-full px-3 py-1 font-semibold text-gray-600">All Pakistan Delivery</span>
+        </div>
+      </div>
+
+      <!-- Horizontal scrolling marquee cards -->
+      <div class="w-full overflow-hidden relative">
+        <div class="animate-marquee whitespace-nowrap inline-block" id="reviews-marquee-container">
+          <!-- Populated in main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialities Grid Section (Widget 5) -->
+    <div class="bg-white py-10 border-t border-[#1a1a1a]/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white text-center p-5 rounded-lg border border-gray-100 shadow-xs flex flex-col items-center">
+          <img src="https://img.icons8.com/ios-filled/100/000000/customer-support.png" alt="Support 24/7" class="w-10 h-10 mb-3" referrerpolicy="no-referrer" />
+          <h3 class="text-xs sm:text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">SUPPORT 24/7</h3>
+          <p class="text-xs text-gray-500 mt-1">Contact us on WhatsApp 24/7</p>
+        </div>
+        <div class="bg-white text-center p-5 rounded-lg border border-gray-100 shadow-xs flex flex-col items-center">
+          <img src="https://img.icons8.com/ios-filled/100/000000/delivery.png" alt="Fast Delivery" class="w-10 h-10 mb-3" referrerpolicy="no-referrer" />
+          <h3 class="text-xs sm:text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">FAST DELIVERY</h3>
+          <p class="text-xs text-gray-500 mt-1">Fastest Delivery Service</p>
+        </div>
+        <div class="bg-white text-center p-5 rounded-lg border border-gray-100 shadow-xs flex flex-col items-center">
+          <img src="https://img.icons8.com/ios-filled/100/000000/replace.png" alt="Easy Exchange" class="w-10 h-10 mb-3" referrerpolicy="no-referrer" />
+          <h3 class="text-xs sm:text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">EASY EXCHANGE</h3>
+          <p class="text-xs text-gray-500 mt-1">Read our terms and conditions</p>
+        </div>
+        <div class="bg-white text-center p-5 rounded-lg border border-gray-100 shadow-xs flex flex-col items-center">
+          <img src="https://img.icons8.com/ios-filled/100/000000/money.png" alt="COD Available" class="w-10 h-10 mb-3" referrerpolicy="no-referrer" />
+          <h3 class="text-xs sm:text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">COD AVAILABLE</h3>
+          <p class="text-xs text-gray-500 mt-1">Cash on delivery option available</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact & Feedback Form Section -->
+    <section id="contact-section" class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 w-full">
+      <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row gap-10">
+        <!-- Abstract glowing circles -->
+        <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-sky-500/10 blur-2xl"></div>
+        <div class="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-amber-500/5 blur-2xl"></div>
+
+        <div class="flex-1 space-y-6 z-10">
+          <span class="text-[#b89253] font-bold text-xs uppercase tracking-widest block">Direct Helpline</span>
+          <h2 class="text-2xl sm:text-3xl font-serif tracking-tight text-white leading-tight">
+            Have any queries?<br><span class="italic font-light">We are here to assist you.</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            Message or call us directly on WhatsApp, or send us an email. Our team typically replies within minutes to help you complete your orders, track shipments, or request products.
+          </p>
+
+          <div class="flex flex-col gap-4 pt-2">
+            <!-- WhatsApp Button -->
+            <a
+              id="direct-whatsapp-contact-btn"
+              href="https://wa.me/923495979062?text=Hi%20Royal%20Sphire%21%20I%27d%20like%20to%20inquire%20about%20your%20premium%20tech%20gadgets."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 bg-[#25D366] hover:bg-[#20ba56] text-white font-sans font-bold text-sm px-6 py-4 rounded-xl shadow-lg transition-all active:scale-98 group cursor-pointer"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-[10px] text-white/70 uppercase tracking-widest font-normal">Fastest Response</p>
+                <p class="text-sm font-bold">Contact via WhatsApp</p>
+              </div>
+            </a>
+
+            <!-- Email Button -->
+            <a
+              id="direct-email-contact-btn"
+              href="mailto:ayazmehmod05@gmail.com?subject=Product%20Inquiry%20-%20Royal%20Sphire"
+              class="flex items-center gap-4 bg-white/10 hover:bg-white/15 border border-white/10 text-white font-sans font-bold text-sm px-6 py-4 rounded-xl shadow-lg transition-all active:scale-98 group cursor-pointer"
+            >
+              <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-neutral-300 shrink-0 group-hover:text-white transition-colors">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-[10px] text-white/50 uppercase tracking-widest font-normal">Customer Support Email</p>
+                <p class="text-sm font-bold">ayazmehmod05@gmail.com</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex-1 bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/5 z-10 shadow-inner">
+          <h3 class="text-sm font-bold uppercase tracking-wider text-[#b89253] mb-4.5">Quick Contact Form</h3>
+          <form id="quick-contact-form" class="space-y-4">
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5" for="form-name">Your Name</label>
+              <input type="text" id="form-name" required class="w-full bg-white/5 border border-white/10 text-sm p-3 focus:outline-none focus:border-[#b89253] text-white rounded-lg transition-all" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5" for="form-phone">WhatsApp Number</label>
+              <input type="tel" id="form-phone" required placeholder="e.g. 03495979062" class="w-full bg-white/5 border border-white/10 text-sm p-3 focus:outline-none focus:border-[#b89253] text-white rounded-lg transition-all" />
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-wider text-neutral-400 font-bold mb-1.5" for="form-message">Your Message</label>
+              <textarea id="form-message" rows="3" required class="w-full bg-white/5 border border-white/10 text-sm p-3 focus:outline-none focus:border-[#b89253] text-white rounded-lg transition-all"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#b89253] hover:bg-[#a67e41] text-white font-bold text-xs uppercase tracking-widest py-4 transition-all rounded-lg active:scale-98 shadow-md hover:shadow-lg cursor-pointer">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rotating Customer Comments Review Widget (Widget 13) -->
+    <div id="reviews-carousel-widget" class="max-w-md mx-auto my-6 p-4 border border-black/10 bg-white shadow-xs rounded-xl flex items-center gap-4 transition-all duration-500 font-sans">
+      <!-- Injected by main.js dynamically -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#141414] text-[#fdfdfb]/80 border-t border-white/5 pt-16 font-sans">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 pb-16">
+        
+        <!-- Column 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="relative h-7 w-7 rounded-full overflow-hidden border border-white/10 bg-white flex items-center justify-center shrink-0 shadow-xs">
+              <img 
+                src="WhatsApp Image 2026-07-13 at 4.03.28 PM.jpeg" 
+                alt="Royal Sphire Logo" 
+                referrerpolicy="no-referrer"
+                class="h-full w-full object-cover scale-[1.02]"
+              />
+            </div>
+            <span class="text-base font-serif italic tracking-tight text-white font-bold">
+              Royal <span class="not-italic font-light text-xs uppercase tracking-widest ml-1 opacity-80">Sphire</span>
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#fdfdfb]/60 leading-relaxed max-w-sm">
+            Royal Sphire is Pakistan's ultimate destination for cutting-edge gadgets, smartwatches, transparent earbuds, men's trimmer detailers, and kitchen organizers. We bring tech to your lifestyle with unmatched quality and pricing.
+          </p>
+          <!-- Happy status indicator -->
+          <div class="flex items-center gap-2 text-green-400 font-bold text-[10px] uppercase tracking-wider">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+            <span>Customer Satisfaction Guaranteed</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="space-y-4.5">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-[#b89253]">Shop Categories</h3>
+          <ul class="text-xs space-y-3 uppercase font-semibold text-[#fdfdfb]/60 tracking-wider">
+            <li><a href="#catalog-section" class="category-link-footer hover:text-white transition-colors" data-category="smartwatches">Smartwatches</a></li>
+            <li><a href="#catalog-section" class="category-link-footer hover:text-white transition-colors" data-category="earbuds">Wireless Earbuds</a></li>
+            <li><a href="#catalog-section" class="category-link-footer hover:text-white transition-colors" data-category="grooming">Men's Grooming</a></li>
+            <li><a href="#catalog-section" class="category-link-footer hover:text-white transition-colors" data-category="kitchen-home">Kitchen & Home Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="space-y-4.5 text-xs sm:text-sm text-[#fdfdfb]/60 leading-relaxed">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-[#b89253]">Store Contacts</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-[#b89253]"></i>
+              <span>+92 349 5979062</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-[#b89253]"></i>
+              <span>royalsphire@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#b89253]"></i>
+              <span>Gujranwala, Punjab, Pakistan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Sub-footer -->
+      <div class="border-t border-white/5 py-8 bg-[#141414]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-[#fdfdfb]/40 uppercase tracking-widest">
+          <p>© 2026 Royal Sphire Pakistan. All Rights Reserved. Built with ❤️ for smart shoppers.</p>
+          <div class="flex gap-6 font-bold">
+            <a href="#" class="hover:text-white transition-colors">Terms</a>
+            <a href="#" class="hover:text-white transition-colors">Refunds</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- OVERLAYS, DRAWERS, MODALS (STATE MANAGED) -->
+    <!-- ========================================== -->
+
+    <!-- TOAST NOTIFICATION FLOATING CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2.5 pointer-events-none">
+      <!-- Injected dynamically in JS -->
+    </div>
+
+    <!-- FLOATING TICKER AND WHATSAPP FLOATING BUBBLE (Bottom Left) -->
+    <div class="fixed bottom-6 left-6 z-40 flex flex-col items-start gap-4 pointer-events-none">
+      
+      <!-- Live Order Activity Ticker Popup (Widget 18) -->
+      <div id="live-order-ticker" class="bg-white border border-[#1a1a1a]/15 shadow-xl p-3 max-w-[280px] font-sans transition-all duration-300 flex items-center gap-3 rounded-none pointer-events-auto transform translate-y-24 opacity-0">
+        <div class="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping flex-shrink-0"></div>
+        <div id="live-order-ticker-text" class="text-[11px] text-gray-800 leading-normal">
+          <!-- Text updated in main.js -->
+        </div>
+      </div>
+
+      <!-- Floating WhatsApp widget button -->
+      <div class="group flex flex-col items-start gap-2 pointer-events-auto">
+        <a
+          id="floating-whatsapp-widget"
+          href="https://wa.me/923495979062?text=Hi%20Royal%20Sphire%21%20I%20am%20browsing%20your%20website%20and%20need%20help%20placing%20an%20order."
+          target="_blank"
+          referrerPolicy="no-referrer"
+          class="bg-green-500 hover:bg-green-600 text-white p-3.5 sm:p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-90 flex items-center justify-center relative cursor-pointer"
+        >
+          <i data-lucide="message-square" class="w-6 h-6 text-white fill-white"></i>
+          <!-- Tooltip description -->
+          <span class="absolute left-14 bg-gray-950 text-white font-bold text-[10px] sm:text-xs px-3 py-1.5 rounded-xl shadow whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            WhatsApp Order: +92 349 5979062
+          </span>
+          <span class="absolute inset-0 rounded-full bg-green-500 -z-10 animate-ping opacity-30"></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 1. CART DRAWER (Right Side Slide) -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div class="absolute inset-y-0 right-0 max-w-md w-full bg-[#fdfdfb] shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out">
+        
+        <!-- Header -->
+        <div class="p-5 border-b border-[#1a1a1a]/10 flex justify-between items-center bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <span class="font-serif italic font-bold text-lg text-[#1a1a1a]">Shopping Cart</span>
+          </div>
+          <button id="cart-close" class="p-1 text-[#1a1a1a] hover:opacity-50 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+
+        <!-- High Demand Timer Alert (Widget 16) -->
+        <div class="bg-[#b89253]/10 border-b border-[#b89253]/20 p-3 text-center font-sans">
+          <p class="text-xs text-[#8c672b] font-medium leading-normal">
+            🔥 <strong>High Demand!</strong> Your items are reserved for <span id="cart-timer-countdown" class="font-mono font-bold text-red-600 bg-white px-1.5 py-0.5 border border-red-500/10 rounded">10:00</span>
+          </p>
+        </div>
+
+        <!-- Cart items list (Scrollable) -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+          <!-- Populated in main.js -->
+        </div>
+
+        <!-- Subtotal, delivery information, and Checkout buttons -->
+        <div class="border-t border-[#1a1a1a]/10 p-5 bg-white space-y-4">
+          <div class="flex justify-between items-center text-sm">
+            <span class="text-gray-500 font-medium">Subtotal:</span>
+            <span id="cart-subtotal" class="font-bold text-base text-gray-900">Rs. 0</span>
+          </div>
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-gray-500">Shipping:</span>
+            <span class="text-green-600 font-bold">FREE Delivery</span>
+          </div>
+          
+          <button
+            id="cart-checkout-btn"
+            class="w-full bg-[#1a1a1a] hover:bg-black text-white font-bold text-xs uppercase tracking-widest py-4 transition-all shadow-md active:scale-98 cursor-pointer"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. WISHLIST DRAWER (Right Side Slide) -->
+    <div id="wishlist-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div class="absolute inset-y-0 right-0 max-w-md w-full bg-[#fdfdfb] shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out">
+        <div class="p-5 border-b border-[#1a1a1a]/10 flex justify-between items-center bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="heart" class="w-5 h-5 text-red-500 fill-red-500"></i>
+            <span class="font-serif italic font-bold text-lg text-[#1a1a1a]">My Wishlist</span>
+          </div>
+          <button id="wishlist-close" class="p-1 text-[#1a1a1a] hover:opacity-50 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+
+        <!-- Scrollable list of saved favorites -->
+        <div id="wishlist-items-container" class="flex-1 overflow-y-auto p-5 space-y-4">
+          <!-- Populated dynamically in main.js -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PRODUCT DETAILS MODAL -->
+    <div id="product-modal" class="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="relative bg-white max-w-3xl w-full rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh]">
+        <!-- Close icon button -->
+        <button id="product-modal-close" class="absolute right-4 top-4 z-10 bg-white/80 p-2 rounded-full border border-gray-150 hover:bg-white text-gray-800 transition-all cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Left Column: Product Images Gallery -->
+        <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between max-h-[40vh] md:max-h-none overflow-y-auto">
+          <div class="flex-1 flex items-center justify-center p-2">
+            <img id="modal-main-image" src="" alt="" class="max-h-[250px] md:max-h-[320px] object-contain transition-all" />
+          </div>
+          <!-- Thumbnails gallery slider -->
+          <div id="modal-thumbnails" class="flex gap-2.5 justify-center mt-4">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <!-- Right Column: Product descriptions & checkout trigger -->
+        <div class="flex-1 p-6 sm:p-8 flex flex-col overflow-y-auto max-h-[50vh] md:max-h-none space-y-5">
+          <!-- Dynamic Live Viewer Eye Widget (Widget 9) -->
+          <div class="flex items-center gap-2 py-2 border-y border-gray-100 bg-white font-sans font-bold text-xs text-[#1a1a1a] justify-center">
+            <span class="text-red-600 animate-bounce text-sm">👁️</span>
+            <span>
+              <span id="modal-live-viewers-count" class="font-mono text-red-600 text-sm font-bold mr-1">32</span> people are viewing this item
+            </span>
+          </div>
+
+          <!-- Product meta title & pricing -->
+          <div>
+            <h2 id="modal-title" class="text-xl sm:text-2xl font-serif text-[#1a1a1a] tracking-tight leading-snug">Product Title</h2>
+            <div class="flex items-center gap-3.5 mt-2.5">
+              <span id="modal-price" class="text-lg sm:text-xl font-bold font-mono text-gray-900">Rs. 0</span>
+              <span id="modal-original-price" class="text-xs sm:text-sm line-through text-gray-400 font-mono">Rs. 0</span>
+              <span id="modal-discount-tag" class="bg-red-50 text-red-600 font-bold font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 border border-red-500/15">50% OFF</span>
+            </div>
+          </div>
+
+          <!-- Color/Variant Selector -->
+          <div id="modal-variants-section">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-2">Select Variant/Color</p>
+            <div id="modal-variants-list" class="flex flex-wrap gap-2">
+              <!-- Radio-button-like choices populated dynamically -->
+            </div>
+          </div>
+
+          <!-- Specifications list -->
+          <div>
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-2">Specifications</p>
+            <table class="w-full text-xs">
+              <tbody id="modal-specs-table" class="divide-y divide-gray-100 border-t border-b border-gray-100">
+                <!-- Specs rows inserted dynamically -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Action Buttons (Add to Cart / Buy Now) -->
+          <div class="pt-2 space-y-3">
+            <div class="flex items-center gap-3">
+              <label class="text-xs font-bold text-gray-500 uppercase tracking-wider" for="modal-qty">Qty:</label>
+              <select id="modal-qty" class="bg-gray-50 border border-gray-200 px-3 py-2 text-sm focus:outline-none focus:border-[#1a1a1a]">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+
+            <div class="flex gap-3 pt-1">
+              <button
+                id="modal-add-to-cart-btn"
+                class="flex-1 border border-black hover:bg-gray-50 text-[#1a1a1a] font-bold text-xs uppercase tracking-widest py-3.5 transition-all active:scale-98 cursor-pointer"
+              >
+                Add to Cart
+              </button>
+              <button
+                id="modal-buy-now-btn"
+                class="flex-1 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-widest py-3.5 transition-all active:scale-98 shadow-md cursor-pointer"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+
+          <!-- Dynamic Reviews for Product -->
+          <div class="border-t border-gray-100 pt-5">
+            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-3.5">Verified Reviews for this item</p>
+            <div id="modal-reviews-list" class="space-y-4">
+              <!-- Reviews list populated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. QUICK CHECKOUT DRAWER (Right Side Slide) -->
+    <div id="checkout-drawer" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs transition-opacity duration-300 opacity-0 pointer-events-none">
+      <div class="absolute inset-y-0 right-0 max-w-md w-full bg-[#fdfdfb] shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-out">
+        <div class="p-5 border-b border-[#1a1a1a]/10 flex justify-between items-center bg-white">
+          <div class="flex items-center gap-2">
+            <i data-lucide="shield-check" class="w-5 h-5 text-green-600"></i>
+            <span class="font-serif italic font-bold text-lg text-[#1a1a1a]">Secure Checkout</span>
+          </div>
+          <button id="checkout-close" class="p-1 text-[#1a1a1a] hover:opacity-50 cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+
+        <!-- Special Discount Active Ticker (Widget 17) -->
+        <div class="bg-red-50 border-b border-red-200 p-4 text-center font-sans">
+          <div class="flex items-center justify-center gap-2 text-red-700 font-bold text-xs uppercase tracking-wider">
+            <span class="animate-pulse">⚡</span>
+            Special COD Discount Activated!
+          </div>
+          <p class="text-[11px] text-gray-600 mt-1">
+            Complete your order in the next <strong id="checkout-discount-countdown" class="font-mono text-red-600 text-xs font-bold">08:45</strong> to unlock <strong>FREE DELIVERY</strong> today!
+          </p>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5 space-y-6">
+          
+          <!-- Order Summary details -->
+          <div>
+            <h4 class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-3">Order Summary</h4>
+            <div id="checkout-summary-list" class="space-y-2 border-b border-gray-100 pb-3">
+              <!-- Summary of checking out items popped here dynamically -->
+            </div>
+            <div class="flex justify-between items-center text-sm font-bold pt-3">
+              <span class="text-gray-900">Total Bill:</span>
+              <span id="checkout-total-bill" class="font-mono text-lg text-[#1a1a1a]">Rs. 0</span>
+            </div>
+          </div>
+
+          <!-- Shipping Details form -->
+          <div class="space-y-4">
+            <h4 class="text-[10px] uppercase tracking-widest text-gray-500 font-bold border-b border-gray-100 pb-1.5">Shipping & Contact Details</h4>
+            
+            <form id="checkout-form" class="space-y-4">
+              <div>
+                <label class="block text-[10px] uppercase tracking-wider text-gray-600 font-bold mb-1.5" for="check-name">Full Name</label>
+                <input type="text" id="check-name" required class="w-full bg-white border border-gray-250 text-xs p-3 focus:outline-none focus:border-black rounded" />
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase tracking-wider text-gray-600 font-bold mb-1" for="check-phone">WhatsApp Mobile Phone Number</label>
+                <p class="text-[10px] text-gray-400 mb-1.5 font-medium leading-none">For confirmation and delivery dispatch.</p>
+                <input type="tel" id="check-phone" placeholder="e.g. 03495979062" required class="w-full bg-white border border-gray-250 text-xs p-3 focus:outline-none focus:border-black rounded font-mono" />
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase tracking-wider text-gray-600 font-bold mb-1" for="check-city">Select City</label>
+                <p class="text-[10px] text-gray-400 mb-1.5 font-medium leading-none font-sans">Type to search your city from list.</p>
+                
+                <div class="relative">
+                  <input type="text" id="check-city" placeholder="Type city name..." required autocomplete="off" class="w-full bg-white border border-gray-250 text-xs p-3 focus:outline-none focus:border-black rounded" />
+                  <!-- City dynamic suggestion drop menu -->
+                  <div id="city-dropdown" class="absolute left-0 right-0 max-h-48 overflow-y-auto bg-white border border-gray-200 shadow-lg z-20 hidden rounded-md divide-y divide-gray-100">
+                    <!-- Cities search results populated here -->
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-[10px] uppercase tracking-wider text-gray-600 font-bold mb-1.5" for="check-address">Complete Home / Shop Address</label>
+                <input type="text" id="check-address" placeholder="House/Flat number, Street name, Area etc." required class="w-full bg-white border border-gray-250 text-xs p-3 focus:outline-none focus:border-black rounded" />
+              </div>
+
+              <!-- Secure Shop badge (Widget 15) -->
+              <div class="bg-[#f5f5f0] border border-[#1a1a1a]/10 p-3 flex flex-col items-center justify-center text-center rounded-lg mt-3">
+                <div class="flex items-center gap-1.5 text-green-700 font-bold uppercase tracking-wider text-[9px]">
+                  <span class="w-1.5 h-1.5 bg-green-600 rounded-full animate-ping"></span>
+                  🔒 100% Secure Checkout Guaranteed
+                </div>
+                <p class="text-[9px] text-gray-500 mt-1 font-mono uppercase tracking-widest leading-none">
+                  Cash On Delivery • 7 Days Return • Verified Quality
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-widest py-4 transition-all shadow-md active:scale-98 rounded cursor-pointer"
+              >
+                Place Order (Cash On Delivery)
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. ORDER SUCCESS MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+      <div class="relative bg-white max-w-md w-full rounded-2xl shadow-2xl overflow-hidden p-6 sm:p-8 transform scale-95 transition-transform duration-300 text-center space-y-6">
+        
+        <!-- Large Green Check badge -->
+        <div class="w-16 h-16 bg-green-50 rounded-full border border-green-200 text-green-600 flex items-center justify-center text-3xl mx-auto shadow-sm">
+          ✓
+        </div>
+
+        <div class="space-y-2">
+          <h2 class="text-xl sm:text-2xl font-serif text-[#1a1a1a] tracking-tight">Order Placed Successfully!</h2>
+          <p class="text-xs text-gray-500">Shukriya! Your order is being processed by our team.</p>
+        </div>
+
+        <!-- Tracking Details container -->
+        <div class="bg-gray-50 border border-gray-150 rounded-xl p-4.5 space-y-3.5 text-left text-xs font-sans">
+          <div class="flex justify-between">
+            <span class="text-gray-500">Tracking ID:</span>
+            <span id="success-tracking-id" class="font-mono font-bold text-[#1a1a1a]">RS-XXXXXX</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Name:</span>
+            <span id="success-name" class="font-semibold text-[#1a1a1a]">John Doe</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-gray-500">Total Bill:</span>
+            <span id="success-total" class="font-bold font-mono text-gray-900">Rs. 0</span>
+          </div>
+        </div>
+
+        <!-- WhatsApp Urgent Dispatch Verification Banner -->
+        <div class="space-y-4">
+          <p class="text-[11px] text-[#b89253] font-bold leading-relaxed uppercase tracking-wider">
+            🚨 VERY IMPORTANT FOR QUICK DISPATCH
+          </p>
+          <p class="text-xs text-gray-600 leading-relaxed mt-1">
+            Tap the button below to send your order details directly to our WhatsApp. This will let our customer representatives verify and dispatch your items immediately. Shukriya!
+          </p>
+          
+          <a
+            id="success-whatsapp-btn"
+            href=""
+            target="_blank"
+            class="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba56] text-white font-bold text-xs uppercase tracking-widest py-4.5 transition-all shadow-md hover:shadow-lg rounded-xl cursor-pointer"
+          >
+            <i data-lucide="message-square" class="w-4 h-4 fill-white"></i>
+            <span>Verify Order via WhatsApp</span>
+          </a>
+        </div>
+
+        <button
+          id="success-close-btn"
+          class="text-xs font-semibold uppercase tracking-widest text-[#1a1a1a] hover:opacity-60 transition-opacity pt-2 block mx-auto cursor-pointer"
+        >
+          Close & Continue Shopping
+        </button>
+      </div>
+    </div>
+
+    <!-- main JS bundle loaded dynamically -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

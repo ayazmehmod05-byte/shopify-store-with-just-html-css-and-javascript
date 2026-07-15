@@ -1,0 +1,6 @@
+{
+  "name": "Royal Sphire - Premium Gadgets & Lifestyle",
+  "description": "Premium Pakistani online store featuring the latest Smart Watches, Wireless Earbuds, Tech Gadgets, and Home Accessories with Cash on Delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
