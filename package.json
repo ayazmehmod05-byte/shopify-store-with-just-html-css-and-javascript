@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build",
+    "build:css": "npx @tailwindcss/cli@4 -i index.css -o style.css",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "echo 'Vanilla HTML/CSS/JS does not require TypeScript compilation linting'"

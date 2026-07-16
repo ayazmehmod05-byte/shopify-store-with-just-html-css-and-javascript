@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Royal Sphire | Premium Tech Gadgets, Smartwatches & Lifestyle</title>
-    <!-- Tailwind CSS Integration through Vite -->
-    <link rel="stylesheet" href="index.css" />
-    <script type="module" src="main.js"></script>
+    <!-- Compiled Tailwind CSS (static, works with Go Live) -->
+    <link rel="stylesheet" href="./style.css" />
     <!-- Lucide Icons CDN for Vanilla JS -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Favicon -->
@@ -49,7 +48,7 @@
 
           <!-- Brand Logo -->
           <div class="flex-shrink-0 flex items-center">
-            <a href="/" class="flex items-center gap-2">
+            <a href="./index.html" class="flex items-center gap-2">
               <div class="relative h-9 w-9 sm:h-11 sm:w-11 rounded-full overflow-hidden border border-[#1a1a1a]/15 bg-white flex items-center justify-center shrink-0 shadow-xs">
                 <img 
                   src="WhatsApp Image 2026-07-13 at 4.03.28 PM.jpeg" 
@@ -885,7 +884,8 @@
       </div>
     </div>
 
-    <!-- main JS bundle loaded dynamically -->
-    <script type="module" src="main.js"></script>
+    <!-- Load products data first, then main app logic -->
+    <script type="module" src="./products.js"></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
