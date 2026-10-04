@@ -2567,3 +2567,128 @@ html, body {
     }
   }
 }
+
+/* Shared neutral product image treatment */
+.product-image-surface {
+  background: #f3f1ec;
+}
+
+.product-image-surface img {
+  object-fit: contain;
+  padding: 1rem;
+  mix-blend-mode: multiply;
+}
+
+
+#catalog-section.category-view {
+  padding-top: 1.5rem !important;
+  scroll-margin-top: 11rem;
+}
+
+
+/* Mobile-first catalog and product cards */
+@media (max-width: 639px) {
+  .product-image-surface img {
+    padding: 0.5rem;
+  }
+
+  #catalog-section:not(.category-view) {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  #products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  #catalog-section .product-card-click {
+    overflow-wrap: anywhere;
+  }
+
+  #catalog-section .wishlist-toggle-click {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #catalog-section .product-image-surface + div {
+    min-width: 0;
+  }
+
+  #catalog-section .buy-now-quick {
+    min-height: 2.5rem;
+  }
+
+  #catalog-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 359px) {
+  #catalog-section {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+
+  #products-grid {
+    gap: 0.5rem;
+  }
+
+  #catalog-section .buy-now-quick {
+    font-size: 0.55rem;
+    letter-spacing: 0.04em;
+  }
+
+  #catalog-section .product-image-surface img {
+    padding: 0.35rem;
+  }
+}
+
+
+@media (max-width: 639px) {
+  #products-grid {
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+  }
+
+  #products-grid > .group {
+    height: 100%;
+    min-width: 0;
+  }
+
+  #products-grid .product-image-surface {
+    aspect-ratio: 1.22 / 1;
+  }
+
+  #products-grid h3.product-card-click {
+    min-height: 2.6em;
+  }
+
+  #products-grid .wishlist-toggle-click {
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  #products-grid .buy-now-quick,
+  #products-grid button.product-card-click {
+    min-height: 2.25rem;
+    font-size: 0.6rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+@media (max-width: 359px) {
+  #products-grid .product-image-surface {
+    aspect-ratio: 1.3 / 1;
+  }
+
+  #products-grid .buy-now-quick,
+  #products-grid button.product-card-click {
+    font-size: 0.5rem;
+    letter-spacing: 0.035em;
+  }
+}
+

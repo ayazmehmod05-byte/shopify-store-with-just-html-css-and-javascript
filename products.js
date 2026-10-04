@@ -16,9 +16,9 @@ export const PRODUCTS = [
     price: 14999,
     originalPrice: 29999,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/connected-habitat.jpg',
     images: [
-      'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=600',
+      './images/products/connected-habitat.jpg',
     ],
     category: 'smartwatches',
     rating: 5.0,
@@ -44,11 +44,11 @@ export const PRODUCTS = [
     price: 1899,
     originalPrice: 3500,
     discountPercentage: 46,
-    image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/t800-watch.jpg',
     images: [
-      'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1517502884422-41eaaced0168?auto=format&fit=crop&q=80&w=600'
+      './images/products/t800-watch.jpg',
+      './images/products/t800-watch.jpg',
+      './images/products/t800-watch.jpg'
     ],
     category: 'smartwatches',
     rating: 4.8,
@@ -74,11 +74,11 @@ export const PRODUCTS = [
     price: 1499,
     originalPrice: 3000,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/air31-earbuds.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1608156639585-b3a032ef9689?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&q=80&w=600'
+      './images/products/air31-earbuds.jpeg',
+      './images/products/air31-earbuds.jpeg',
+      './images/products/air31-earbuds.jpeg'
     ],
     category: 'earbuds',
     rating: 4.7,
@@ -104,10 +104,10 @@ export const PRODUCTS = [
     price: 1199,
     originalPrice: 2500,
     discountPercentage: 52,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/m10-earbuds.jpg',
     images: [
-      'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?auto=format&fit=crop&q=80&w=600'
+      './images/products/m10-earbuds.jpg',
+      './images/products/m10-earbuds.jpg'
     ],
     category: 'earbuds',
     rating: 4.5,
@@ -133,10 +133,10 @@ export const PRODUCTS = [
     price: 2399,
     originalPrice: 4500,
     discountPercentage: 47,
-    image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/vgr-trimmer.jpg',
     images: [
-      'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=600'
+      './images/products/vgr-trimmer.jpg',
+      './images/products/vgr-trimmer.jpg'
     ],
     category: 'grooming',
     rating: 4.6,
@@ -162,10 +162,10 @@ export const PRODUCTS = [
     price: 1249,
     originalPrice: 2500,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/vintage-t9.jpg',
     images: [
-      'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1593702295094-aec22df974d9?auto=format&fit=crop&q=80&w=600'
+      './images/products/vintage-t9.jpg',
+      './images/products/vintage-t9.jpg'
     ],
     category: 'grooming',
     rating: 4.4,
@@ -190,10 +190,10 @@ export const PRODUCTS = [
     price: 1699,
     originalPrice: 3500,
     discountPercentage: 51,
-    image: 'https://images.unsplash.com/photo-1578859318509-62790b079366?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/portable-blender.png',
     images: [
-      'https://images.unsplash.com/photo-1578859318509-62790b079366?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1570197571499-166b36435e9f?auto=format&fit=crop&q=80&w=600'
+      './images/products/portable-blender.png',
+      './images/products/portable-blender.png'
     ],
     category: 'kitchen-home',
     rating: 4.5,
@@ -218,9 +218,9 @@ export const PRODUCTS = [
     price: 1399,
     originalPrice: 2800,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/mini-chopper.jpg',
     images: [
-      'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&q=80&w=600'
+      './images/products/mini-chopper.jpg'
     ],
     category: 'kitchen-home',
     rating: 4.6,
@@ -245,10 +245,10 @@ export const PRODUCTS = [
     price: 999,
     originalPrice: 2000,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/sunset-lamp.jpg',
     images: [
-      'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=600',
-      'https://images.unsplash.com/photo-1470252649358-96753a780218?auto=format&fit=crop&q=80&w=600'
+      './images/products/sunset-lamp.jpg',
+      './images/products/sunset-lamp.jpg'
     ],
     category: 'kitchen-home',
     rating: 4.7,
@@ -273,9 +273,9 @@ export const PRODUCTS = [
     price: 899,
     originalPrice: 1800,
     discountPercentage: 50,
-    image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/car-led.jpeg',
     images: [
-      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=600'
+      './images/products/car-led.jpeg'
     ],
     category: 'car-accessories',
     rating: 4.3,
@@ -300,9 +300,9 @@ export const PRODUCTS = [
     price: 1150,
     originalPrice: 2200,
     discountPercentage: 48,
-    image: 'https://images.unsplash.com/photo-1618944913480-b67ee16d7b77?auto=format&fit=crop&q=80&w=600',
+    image: './images/products/portable-fan.jpg',
     images: [
-      'https://images.unsplash.com/photo-1618944913480-b67ee16d7b77?auto=format&fit=crop&q=80&w=600'
+      './images/products/portable-fan.jpg'
     ],
     category: 'kitchen-home',
     rating: 4.5,

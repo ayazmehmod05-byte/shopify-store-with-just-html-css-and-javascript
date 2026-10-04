@@ -176,7 +176,7 @@
     </section>
 
     <!-- Sale is Live Scrolling Marquee -->
-    <div class="w-full overflow-hidden bg-black py-3.5 border-t border-b border-white/5 relative shadow-inner">
+    <div id="sale-marquee" class="w-full overflow-hidden bg-black py-3.5 border-t border-b border-white/5 relative shadow-inner">
       <div class="animate-marquee whitespace-nowrap inline-block">
         <span class="text-white text-xs sm:text-[13px] font-black tracking-[0.15em] uppercase mr-12 inline-flex items-center gap-3.5 select-none font-sans">
           <span class="text-[#ff3838]">⚡ SALE IS LIVE!</span>
@@ -198,15 +198,15 @@
     </div>
 
     <!-- Main Catalog Area -->
-    <main id="catalog-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 flex-1 w-full">
+    <main id="catalog-section" class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-16 flex-1 w-full">
       
       <!-- Catalog Header and Status Info -->
-      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-10 pb-5 border-b border-gray-200 gap-4">
+      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-5 pb-4 border-b border-gray-200 gap-3">
         <div>
           <span id="catalog-badge-text" class="text-[#1a1a1a]/50 font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.25em] block mb-1.5">
             Editorial Selection
           </span>
-          <h2 class="text-2xl sm:text-3xl font-serif font-light text-[#1a1a1a] tracking-tight">
+          <h2 id="catalog-title" class="scroll-mt-36 text-2xl sm:text-3xl font-serif font-light text-[#1a1a1a] tracking-tight">
             Explore <span class="italic font-normal">Smart Gadgets</span>
           </h2>
         </div>
@@ -216,8 +216,30 @@
         </div>
       </div>
 
+      <!-- Catalog grid container -->
+      <div id="products-grid" class="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8">
+        <!-- Dynamic Product Cards injected here by JS -->
+      </div>
+
+      <!-- No Products Alert -->
+      <div id="no-products-alert" class="hidden text-center py-20 space-y-5 max-w-md mx-auto">
+        <div class="w-12 h-12 border border-[#1a1a1a]/10 flex items-center justify-center text-[#1a1a1a] mx-auto bg-[#f5f5f0]/50">
+          <i data-lucide="info" class="w-5 h-5 text-gray-500"></i>
+        </div>
+        <div>
+          <h3 class="text-base font-serif font-medium text-[#1a1a1a]">No products found</h3>
+          <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">We couldn't find anything matching your filters. Try clearing your search term or choosing another category.</p>
+        </div>
+        <button
+          id="clear-catalog-filters-btn"
+          class="bg-[#1a1a1a] hover:bg-black text-white font-bold text-xs tracking-widest uppercase px-6 py-3.5 transition-all active:scale-98 cursor-pointer"
+        >
+          Clear Search & Filters
+        </button>
+      </div>
+
       <!-- Free Delivery Countdown Timer & Urgency Widgets -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-10">
         
         <!-- Countdown Timer Widget (Widget 1) -->
         <div id="countdown-box" class="w-full bg-white border border-red-500 rounded-xl p-5 shadow-xs flex flex-col justify-center text-center">
@@ -286,27 +308,6 @@
         </div>
       </div>
 
-      <!-- Catalog grid container -->
-      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
-        <!-- Dynamic Product Cards injected here by JS -->
-      </div>
-
-      <!-- No Products Alert -->
-      <div id="no-products-alert" class="hidden text-center py-20 space-y-5 max-w-md mx-auto">
-        <div class="w-12 h-12 border border-[#1a1a1a]/10 flex items-center justify-center text-[#1a1a1a] mx-auto bg-[#f5f5f0]/50">
-          <i data-lucide="info" class="w-5 h-5 text-gray-500"></i>
-        </div>
-        <div>
-          <h3 class="text-base font-serif font-medium text-[#1a1a1a]">No products found</h3>
-          <p class="text-xs text-gray-500 mt-1.5 leading-relaxed">We couldn't find anything matching your filters. Try clearing your search term or choosing another category.</p>
-        </div>
-        <button
-          id="clear-catalog-filters-btn"
-          class="bg-[#1a1a1a] hover:bg-black text-white font-bold text-xs tracking-widest uppercase px-6 py-3.5 transition-all active:scale-98 cursor-pointer"
-        >
-          Clear Search & Filters
-        </button>
-      </div>
 
     </main>
 
@@ -644,7 +645,7 @@
         </button>
 
         <!-- Left Column: Product Images Gallery -->
-        <div class="flex-1 bg-gray-50 p-6 flex flex-col justify-between max-h-[40vh] md:max-h-none overflow-y-auto">
+        <div class="flex-1 bg-gray-50 p-3 sm:p-6 flex flex-col justify-between max-h-[35vh] sm:max-h-[40vh] md:max-h-none overflow-y-auto">
           <div class="flex-1 flex items-center justify-center p-2">
             <img id="modal-main-image" src="" alt="" class="max-h-[250px] md:max-h-[320px] object-contain transition-all" />
           </div>
@@ -655,7 +656,7 @@
         </div>
 
         <!-- Right Column: Product descriptions & checkout trigger -->
-        <div class="flex-1 p-6 sm:p-8 flex flex-col overflow-y-auto max-h-[50vh] md:max-h-none space-y-5">
+        <div class="flex-1 p-4 sm:p-8 flex flex-col overflow-y-auto max-h-[52vh] md:max-h-none space-y-4 sm:space-y-5">
           <!-- Dynamic Live Viewer Eye Widget (Widget 9) -->
           <div class="flex items-center gap-2 py-2 border-y border-gray-100 bg-white font-sans font-bold text-xs text-[#1a1a1a] justify-center">
             <span class="text-red-600 animate-bounce text-sm">👁️</span>

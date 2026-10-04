@@ -7,6 +7,7 @@ let state = {
   cart: JSON.parse(localStorage.getItem('royalsphire_cart')) || [],
   wishlist: JSON.parse(localStorage.getItem('royalsphire_wishlist')) || [],
   selectedCategory: 'all',
+  hasSelectedCategory: false,
   searchTerm: '',
   selectedProductId: null,
   selectedVariant: '',
@@ -90,7 +91,7 @@ function renderCategories() {
     return `
       <button 
         data-id="${cat.id}" 
-        class="category-btn flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs uppercase font-bold tracking-widest px-4.5 py-2.5 border transition-all cursor-pointer ${activeClasses}"
+        class="category-btn flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs uppercase font-bold tracking-wide sm:tracking-widest px-3 sm:px-4.5 py-2.5 border transition-all cursor-pointer ${activeClasses}"
       >
         <i data-lucide="${iconName}" class="w-3.5 h-3.5"></i>
         <span>${cat.name}</span>
@@ -105,8 +106,10 @@ function renderCategories() {
     btn.addEventListener('click', (e) => {
       const catId = btn.getAttribute('data-id');
       state.selectedCategory = catId;
+      state.hasSelectedCategory = true;
       renderCategories();
       renderCatalog();
+      document.getElementById('catalog-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
@@ -117,6 +120,10 @@ function renderCatalog() {
   const alert = document.getElementById('no-products-alert');
   if (!grid) return;
 
+  const showLanding = state.selectedCategory === 'all' && !state.searchTerm.trim() && !state.hasSelectedCategory;
+  document.getElementById('hero-section')?.classList.toggle('hidden', !showLanding);
+  document.getElementById('sale-marquee')?.classList.toggle('hidden', !showLanding);
+  document.getElementById('catalog-section')?.classList.toggle('category-view', !showLanding);
   // Filter items
   const filtered = PRODUCTS.filter(p => {
     const matchesCategory = state.selectedCategory === 'all' || p.category === state.selectedCategory;
@@ -133,10 +140,19 @@ function renderCatalog() {
     countDisplay.textContent = `Showing ${filtered.length} items`;
   }
 
+  const titleDisplay = document.getElementById('catalog-title');
+  if (titleDisplay) {
+    const selectedCat = CATEGORIES.find(c => c.id === state.selectedCategory);
+    titleDisplay.textContent = state.searchTerm.trim()
+      ? 'Search results'
+      : state.selectedCategory === 'all'
+        ? state.hasSelectedCategory ? 'All Products' : 'Explore Smart Gadgets'
+        : selectedCat?.name || 'Shop products';
+  }
+
   const badgeDisplay = document.getElementById('catalog-badge-text');
   if (badgeDisplay) {
-    const currentCat = CATEGORIES.find(c => c.id === state.selectedCategory);
-    badgeDisplay.textContent = state.selectedCategory === 'all' ? 'Editorial Selection' : currentCat.name;
+    badgeDisplay.textContent = state.selectedCategory === 'all' ? 'Browse the collection' : 'Category collection';
   }
 
   if (filtered.length === 0) {
@@ -174,56 +190,56 @@ function renderCatalog() {
         </button>
 
         <!-- Product Image Container -->
-        <div class="relative bg-gray-50/50 aspect-square overflow-hidden cursor-pointer product-card-click" data-id="${p.id}">
+        <div class="relative product-image-surface aspect-square overflow-hidden cursor-pointer product-card-click" data-id="${p.id}">
           <img 
             src="${p.image}" 
             alt="${p.title}" 
             referrerpolicy="no-referrer"
-            class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-full object-center transition-transform duration-700 group-hover:scale-105"
           />
         </div>
 
         <!-- Product Copy & Details -->
-        <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+        <div class="p-2 sm:p-5 flex-1 flex flex-col justify-between">
           <div>
             <!-- Star Rating -->
             <div class="flex items-center gap-1.5 mb-2">
-              <div class="text-amber-500 text-xs tracking-wider">★★★★★</div>
-              <span class="text-[10px] text-gray-400 font-bold font-mono">(${p.reviewsCount})</span>
+              <div class="text-amber-500 text-[10px] sm:text-xs tracking-wider">★★★★★</div>
+              <span class="text-[9px] sm:text-[10px] text-gray-400 font-bold font-mono">(${p.reviewsCount})</span>
             </div>
 
             <!-- Title -->
-            <h3 class="product-card-click text-xs sm:text-sm font-bold text-gray-900 tracking-tight line-clamp-2 hover:opacity-80 transition-opacity cursor-pointer mb-2" data-id="${p.id}">
+            <h3 class="product-card-click text-[11px] sm:text-sm font-bold text-gray-900 tracking-tight line-clamp-2 hover:opacity-80 transition-opacity cursor-pointer mb-2" data-id="${p.id}">
               ${p.title}
             </h3>
 
             <!-- Short descriptive bio -->
-            <p class="text-[11px] text-gray-500 line-clamp-2 mb-4 leading-relaxed">
+            <p class="hidden sm:block text-[11px] text-gray-500 line-clamp-2 mb-4 leading-relaxed">
               ${p.description}
             </p>
           </div>
 
           <!-- Price & CTA Button triggers -->
           <div>
-            <div class="flex items-baseline gap-2 mb-4">
+            <div class="flex flex-wrap items-baseline gap-x-1.5 gap-y-1 mb-2.5 sm:mb-4">
               <span class="text-xs sm:text-sm font-bold font-mono text-gray-900">Rs. ${p.price.toLocaleString()}</span>
               ${hasDiscount ? `
-                <span class="text-[10px] line-through text-gray-400 font-mono">Rs. ${p.originalPrice.toLocaleString()}</span>
+                <span class="product-original-price hidden sm:inline text-[10px] line-through text-gray-400 font-mono">Rs. ${p.originalPrice.toLocaleString()}</span>
                 <span class="text-[9px] font-bold font-mono text-red-600 bg-red-50 px-1 border border-red-500/10">-${p.discountPercentage}%</span>
               ` : ''}
             </div>
 
             <!-- Action CTA Group -->
-            <div class="grid grid-cols-2 gap-2">
+            <div class="grid grid-cols-2 gap-1 sm:gap-2">
               <button 
                 data-id="${p.id}" 
-                class="product-card-click text-center border border-[#1a1a1a]/15 hover:bg-gray-50 text-[10px] sm:text-xs font-bold uppercase tracking-widest py-3 transition-all active:scale-98 cursor-pointer"
+                class="product-card-click text-center border border-[#1a1a1a]/15 hover:bg-gray-50 text-[8px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest py-2 sm:py-3 transition-all active:scale-98 cursor-pointer"
               >
-                Quick View
+                Details
               </button>
               <button 
                 data-id="${p.id}" 
-                class="buy-now-quick text-center bg-red-600 hover:bg-red-700 text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest py-3 transition-all active:scale-98 shadow-xs cursor-pointer"
+                class="buy-now-quick text-center bg-red-600 hover:bg-red-700 text-white text-[8px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest py-2 sm:py-3 transition-all active:scale-98 shadow-xs cursor-pointer"
               >
                 Buy Now
               </button>
@@ -394,6 +410,7 @@ function setupDrawersAndModals() {
     clearCatalogBtn.addEventListener('click', () => {
       state.searchTerm = '';
       state.selectedCategory = 'all';
+      state.hasSelectedCategory = false;
       const desktopSearch = document.getElementById('desktop-search-input');
       const mobileSearch = document.getElementById('mobile-search-input');
       if (desktopSearch) desktopSearch.value = '';
@@ -1337,11 +1354,14 @@ function init() {
     link.addEventListener('click', () => {
       const catId = link.getAttribute('data-category');
       state.selectedCategory = catId;
+      state.hasSelectedCategory = true;
       renderCategories();
       renderCatalog();
+      document.getElementById('catalog-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
 
 // Kick off when DOM is fully loaded
 window.addEventListener('DOMContentLoaded', init);
+
